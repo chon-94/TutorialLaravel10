@@ -28,6 +28,7 @@ Bueno tenemos esto:
  
      composer create-project --prefer-dist laravel/laravel proyecto-0 "10.*"
 
+
  **¤composer:** 
  Administrador de dependencias de PHP que se utiliza para gestionar las dependencias de un proyecto PHP.
  **¤create-project:** 
@@ -41,4 +42,8 @@ Bueno tenemos esto:
  Es el nombre de la carpeta en la que se creará el nuevo proyecto. 
  **¤"10.*":** 
  Esta parte especifica la versión de Laravel que se desea instalar en este caso cualquiera que sea 10. 
-     
+
+ ## Todo Listo
+ Teniendo ya laravel instalado podemos empezar a realziar nuestros primeros cambios podriamos cambiar 
+ la pagina de bieenvenida pro ejemplo
+
