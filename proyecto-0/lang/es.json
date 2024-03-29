@@ -1,6 +1,7 @@
 {
     "A Timeout Occurred": "Se produjo un tiempo de espera",
     "Accept": "Aceptar",
+    "Account": "Account ",
     "Accepted": "Aceptado",
     "Action": "Acción",
     "Actions": "Acciones",
@@ -182,5 +183,30 @@
     "View": "Ver",
     "View :name": "Ver :name",
     "Web Server is Down": "El servidor web está caído",
-    "Yes": "Sí"
+    "Yes": "Sí",
+
+
+
+
+    "comentarioos":"La parte baja los agregue yo..",
+
+    
+    "Dashboard" :"Panel",
+    "Profile": "Perfil",
+    "Profile Information": "Información de Perfil",
+    "Log in":"Ingresar",
+    "Register":"Registrate",
+    "Name":"Nombre",
+    "Password":"Contraseña",
+    "Confirm Password":"Confirmar Contraseña",
+    "Already registered?": "Registrado... ingresa por aca",
+    "These credentials do not match our records. ":"Algo esta incorrecto...",
+    "Remember me":"Recordar",
+    "Forgot your password?":"olvidaste la contraseña?",
+    "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.":"¿Olvidaste tu contraseña? Ningún problema. Simplemente háganos saber su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña que le permitirá elegir una nueva.",   
+    "Email Password Reset Link":"Restablecer Contraseña",
+    "The correo electrónico has already been taken.":"El correo electrónico ya fue usado anteriormente",
+    "The contraseña field confirmation does not match.":"No coinciden las contraseñas",
+    "You're logged in!":"tas logeado"
+
 }
