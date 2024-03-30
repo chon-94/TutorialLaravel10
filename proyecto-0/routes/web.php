@@ -18,12 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/prueba', function () {
+// Route::get('/prueba', function () {
 
-    return 'Prueba detail ';
+//     return 'Prueba detail ';
 
+// });
+
+Route::get('/prueba/{prb?}', function ($prb=null) {
+    return 'Prueba no detail :P  '. $prb;
 });
-
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
