@@ -25,9 +25,18 @@ Route::get('/', function () {
 //La variable prb la debemos de mandar por la funcion para usarla en el retorno
 //bien como comentamos la anterior ruta la detail... tendremos un problema para mostrar vista prueba sola
 //para solucionar debemos de ponerle el signo ?  al parametro prb para volverlo opcional
-Route::get('/prueba/{prb?}', function ($prb='si detail') {
+// Route::get('/prueba/{prb?}', function ($prb='si detail') {
+//     return 'Prueba no detail :P  '. $prb;
+// });
+
+// con esa condicion decimos que si el espacion es en blanco que lleve al siguiente destino
+Route::get('/prueba/{prb?}', function ($prb=null) {
+    if ($prb === ''){
+        return redirect('/prueba'); 
+    }
     return 'Prueba no detail :P  '. $prb;
 });
+
 
 
 
