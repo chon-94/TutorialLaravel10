@@ -30,14 +30,26 @@ Route::get('/', function () {
 // });
 
 // con esa condicion decimos que si el espacion es en blanco que lleve al siguiente destino
-Route::get('/prueba/{prb?}', function ($prb=null) {
+// Route::get('/prueba/{prb?}', function ($prb='si detail') {
+//     if ($prb === ''){
+//         return redirect('/prueba'); 
+//     }
+//     return 'Prueba no detail :P  '. $prb;
+// });
+
+
+//podemos darle nombre a las rutas para evitar la referencia directa a la ruta
+Route::get('/prueba', function () {
+    return 'Prueba detail ';
+})->name('prueba.index');
+
+
+Route::get('/prueba/{prb?}', function ($prb='si detail') {
     if ($prb === ''){
-        return redirect('/prueba'); 
+        return to_route('prueba.index'); 
     }
     return 'Prueba no detail :P  '. $prb;
 });
-
-
 
 
 
