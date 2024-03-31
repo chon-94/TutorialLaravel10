@@ -18,9 +18,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/prueba', function () {
-    return 'Prueba detail ';
-})
+// Route::get('/prueba', function () {
+//     return 'Prueba detail ';
+// })
+
+//La variable prb la debemos de mandar por la funcion para usarla en el retorno
+//bien como comentamos la anterior ruta la detail... tendremos un problema para mostrar vista prueba sola
+//para solucionar debemos de ponerle el signo ?  al parametro prb para volverlo opcional
+Route::get('/prueba/{prb?}', function ($prb='si detail') {
+    return 'Prueba no detail :P  '. $prb;
+});
+
+
+
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
