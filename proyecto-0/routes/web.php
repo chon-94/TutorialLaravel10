@@ -14,16 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Route::get('/', "welcome" ) ->name('welcome');
+//podemos darle nombre a las rutas para evitar la referencia directa a la ruta
+Route::view('/','welcome')->name('welcomies');
 
-
-// Route::get('/prueba', function () {
-//     return 'Prueba detail ';
-// })
+Route::get('/prueba', function () {
+    return 'Prueba detail ';
+})->name('prueba.index');
 
 //La variable prb la debemos de mandar por la funcion para usarla en el retorno
 //bien como comentamos la anterior ruta la detail... tendremos un problema para mostrar vista prueba sola
@@ -40,14 +37,8 @@ Route::get('/', "welcome" ) ->name('welcome');
 //     return 'Prueba no detail :P  '. $prb;
 // });
 
-
-//podemos darle nombre a las rutas para evitar la referencia directa a la ruta
-Route::get('/prueba', function () {
-    return 'Prueba detail ';
-})->name('prueba.index');
-
-
-Route::get('/prueba/{prb?}', function ($prb='si detail') {
+//de esta manera podremos ir al index is no ponemos una variable... si cambias esto $prb=null osea el valor nul los cambios se presentaran en lavista
+Route::get('/prueba/{prb?}', function ($prb=null) {
     if ($prb === ''){
         return to_route('prueba.index'); 
     }
@@ -55,14 +46,14 @@ Route::get('/prueba/{prb?}', function ($prb='si detail') {
 });
 
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
