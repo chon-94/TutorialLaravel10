@@ -114,3 +114,53 @@ Bueno tenemos esto:
  si no tenemos problemas ni errores podremos contiuar con el siguente comando
 
      php artisan lang:add es
+
+## Rutas
+ proyecto-0/routes/web.php 
+ ahi podemos hacer muchas cosas
+
+
+## Middleware
+
+ en el mundo de laravel estos metodos es una pieza de codigo que se ejecutaentre entre la 
+ solicitud y respuesta es una capa intermedia que hace validaciones antes de que se llegue 
+ al destino final veamos el ejemplo de esta vista 
+ 
+ ubicada en esta ruta
+
+    proyecto-0/routes/web.php
+ 
+ Ahora en la siguiente ruta vemos algo llamado middleware lo que hace ahi es solicitarse entre 
+ la solicitud y la respuesta aca se estan aplicando 2 el **auth** verifica si el usuario esta autentificado,
+ si ya se logeo con anterioridad y tiene unsa sesion valida si es asi ledara la vista al panel principal 
+ y si no  lo llevara al logeo el **verified** se asegura de que el usuario verifique su correo
+ esto apra saber que su correo existe y puede recibir mensajes 
+
+     Route::get('/dashboard', function () {
+         return view('dashboard');
+     })->middleware(['auth','verified'])->name('dashboard');
+  
+
+
+ Ahora en esta ruta
+
+     proyecto-0/app/Models/User.php
+
+ Encontramos este codigo comentado lo descomentamos 
+
+     use Illuminate\Contracts\Auth\MustVerifyEmail;
+     
+ Y agregamos el implemento de MustVerifyEmail
+
+    class User extends Authenticatable **implements MustVerifyEmail**   
+
+
+ **Middleware guest** ahora nos toca hablar de este Middleware en especifico si nos damos cuenta en la ruta 
+ proyecto-0/routes/web.php al final encontramos la sigueinte linear *require __DIR__.'/auth.php';*  esto 
+ indica que usareoms  este archivo ubicado en esta ruta **proyecto-0/routes/auth.php** 
+ bueno en la ruta **proyecto-0/app/Providers/RouteServiceProvider.php** tenemos la linea de comando 
+ **public const HOME = '/dashboard';** si cambiamos el dashboard podremos cambiar la pagina de bienvinda
+ del usuario osea cambiamos la orimera pagina que veria el usuario despues de logearse ahora que tenemos 
+ en cuenta este segundo punto podriamos aprovechar un poco de espacio
+
+  
