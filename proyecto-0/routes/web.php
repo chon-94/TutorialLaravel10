@@ -62,12 +62,17 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/prueba/{prb?}', function ($prb=null) {
-        if ($prb === ''){
-            return to_route('prueba.index'); 
-        }
-        return 'Prueba no detail :P  '. $prb;
-    }); 
+    // Route::get('/prueba/{prb?}', function ($prb=null) {
+    //     if ($prb === ''){
+    //         return to_route('prueba.index'); 
+    //     }
+    //     return 'Prueba no detail :P  '. $prb;
+    // }); 
+
+    Route::get('/prueba', function () {
+        // return view('prueba.index'); 
+        return 'hola caramba';
+    })->name('prueba.index');
 
 });
 
