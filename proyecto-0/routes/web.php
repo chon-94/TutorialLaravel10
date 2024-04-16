@@ -70,8 +70,8 @@ Route::middleware('auth')->group(function () {
     // }); 
 
     Route::get('/prueba', function () {
-        // return view('prueba.index'); 
-        return 'hola caramba';
+        return view('prueba.index');
+        // return 'hola caramba';
     })->name('prueba.index');
 
 });
