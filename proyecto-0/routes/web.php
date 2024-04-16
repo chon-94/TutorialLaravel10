@@ -74,6 +74,9 @@ Route::middleware('auth')->group(function () {
         // return 'hola caramba';
     })->name('prueba.index');
 
+    Route::post('/prueba', function () {
+        return 'en proceso';
+    });
 });
 
 require __DIR__.'/auth.php';
