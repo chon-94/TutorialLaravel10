@@ -75,7 +75,8 @@ Route::middleware('auth')->group(function () {
     })->name('prueba.index');
 
     Route::post('/prueba', function () {
-        return 'en proceso';
+        // return 'en proceso';
+        return request();
     });
 });
 
