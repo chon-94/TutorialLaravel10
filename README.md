@@ -66,6 +66,8 @@ Bueno tenemos esto:
  Bueno para correr la pagina usamos 
 
      php artisan serve
+     
+     npm run dev
 
  Hasta este punto todo debe de estar bien pero al momentod registrar a un susuario 
  podriamos tener algunos problemillas uno de ellos es que talvez... tengomos una
@@ -163,4 +165,61 @@ Bueno tenemos esto:
  del usuario osea cambiamos la orimera pagina que veria el usuario despues de logearse ahora que tenemos 
  en cuenta este segundo punto podriamos aprovechar un poco de espacio
 
-  
+ ##Bueno ahora en las navegaciones estaria bueno crear un archivo en esta ruta asi de la sgt manera
+
+     proyecto-0/resources/views/prueba/index.blade.php
+
+ ahora en nuestro archivo web de routes podremos cambiar algo el primer parafo esta comentado  y el segundo 
+ viene a ser una modificacion para que retorne en el archivo que creamos en la carpeta prueba
+
+         // Route::get('/prueba/{prb?}', function ($prb=null) {
+         //     if ($prb === ''){
+         //         return to_route('prueba.index'); 
+         //     }
+         //     return 'Prueba no detail :P  '. $prb;
+         // }); 
+
+         Route::get('/prueba', function () {
+             // return view('prueba.index'); 
+             return 'hola caramba';
+         })->name('prueba.index');
+    
+## Navegacion
+
+bien para la navegacion ya tenemos una ruta views/layouts/navigation.blade.php aca podemos cambiar la barra de navegacion... si queremos colocarla
+en todas partes deberiamos de colocar en cada archivo blade.php
+
+     <x-app-layout>
+     ejemplo
+     </x-app-layout>
+
+todo esto se instalo cuando instalamos breeze... bastente rapido verdad bueno como sea un ejemplo mas claro seria este  estamos tomando casi la 
+misma estructura del panel pero con los cosa que lo distingan... 
+
+     <x-app-layout>
+         <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                  {{ __('Prueba') }}
+            </h2>
+         </x-slot> x
+
+         <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                  <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                       <div class="p-6 text-gray-900 dark:text-gray-100">
+                           {{ __("You're logged in!") }}
+
+                           ya y ademas este es el pruebas form 
+                       </div>
+                  </div>
+            </div>
+         </div>
+     </x-app-layout>
+
+bien podemos cambiar todas esas cosas dentro de este sitio layouts/navigation.blade.php 
+podemos modificar algunos componentes aca **views/components/responsive-nav-link.blade.php**
+todos estos se  encuentran dentro de la carpeta views... bueno en realidad todo lo de components
+sirve para eso **views/components/nav-link.blade.php** se puede cambiar muchos otros aspectos 
+relacionados al diseño **components**
+
+ 
