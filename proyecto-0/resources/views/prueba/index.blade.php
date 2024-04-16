@@ -13,14 +13,16 @@
                         {{ __("You're logged in!") }}
                     </h4>
                     <h2>Formularios pruebas</h2>
-                    ya y ademas este es el pruebas formya y ademas este es el pruebas formya y ademas este es el pruebas ya y ademas este es el pruebas formya y ademas este es el pruebas f
-                    a y ademas este es el pruebas ya formya y ademas este es pruebasya y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas e
-                    ste es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el prue
-                    bas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas form     ya y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ad
-                                        ya y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas est
-e es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas form     ya y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas fa y ademas este es el pruebas form                     ya y ademas este es el pruebas form  y ademas este es el pruebas form                     ya y ademas este es el pruebas form                     ya y ademas este es el pruebas form                     ya y ademas este es el pruebas form                     ya y ademas este es el pruebas form                     ya y ademas este es el pruebas form                     ya y ademas este es el pruebas form                     ya y ademas este es el pruebas form                     ya y ademas este es el pruebas form                     ya y ademas este es el pruebas form                     ya y ademas este es el pruebas form 
-emas este es el pruebas f
-                    ya y ademas este es el pruebas form 
+                    <form method="POST">
+                        @csrf
+                        <textarea name="message" class=" bg-transparent text-orange-700">
+                        
+                        </textarea>
+                        <br>
+                        <button class=" bg-yellow-400 text-green-900 ">
+                            chispas
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
