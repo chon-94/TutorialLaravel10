@@ -222,4 +222,4 @@ todos estos se  encuentran dentro de la carpeta views... bueno en realidad todo 
 sirve para eso **views/components/nav-link.blade.php** se puede cambiar muchos otros aspectos 
 relacionados al diseño **components**
 
- 
+## Formulario
