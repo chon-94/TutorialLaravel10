@@ -76,7 +76,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/prueba', function () {
         // return 'en proceso';
-        return request();
+        // return request();
+        return request('message');
     });
 });
 
