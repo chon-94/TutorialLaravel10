@@ -274,4 +274,30 @@ Bueno tenemos esto:
 
     request('message'): Esto es una forma de acceder a los datos enviados mediante una solicitud HTTP POST o GET. En este caso, request('message') está obteniendo el valor del campo del formulario llamado "message".
 
-44:44
+## Migraciones
+
+ Ahora vamos a trabajar en la insercion de la prueba en basede datos utilizaremos un comando
+
+     php artisan make:model Prueba -mrc
+
+ php artisan: Nos permite ejecutar varias tareas relacionadas con el desarrollo de la aplicación.
+
+ make:model: Para generar un nuevo modelo en Laravel. El modelo es una representación de una tabla de la DB y nos permite interactuar con los datos de esa tabla a través de métodos y relaciones definidas en el modelo.
+
+ Prueba: Este es el nombre del modelo que estamos creando.
+
+ -m: Crea una migración asociada al modelo. Las migraciones en Laravel son archivos que nos permiten definir la estructura de las tablas de la DB y realizar cambios en ellas 
+    
+     Modelo (app/Models/Prueba.php)
+
+ -r: Crea un controlador asociado al modelo. Los controladores en Laravel son responsables de manejar las solicitudes HTTP y de interactuar con los modelos y las vistas para proporcionar una respuesta.
+     
+     Migración (database/migrations/yyyy_mm_dd_hhmmss_create_pruebas_table.php)
+
+ -c: crea un controlador de recursos, que proporciona métodos predefinidos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en el modelo. 
+     
+     Controlador (app/Http/Controllers/PruebaController.php)    
+
+ Despues de correr el comando nos saldra un mensaje con la ubicacion de los archivos generados     
+
+     php artisan migrate:rollback
