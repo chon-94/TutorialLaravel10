@@ -163,9 +163,8 @@ Bueno tenemos esto:
  bueno en la ruta **proyecto-0/app/Providers/RouteServiceProvider.php** tenemos la linea de comando 
  **public const HOME = '/dashboard';** si cambiamos el dashboard podremos cambiar la pagina de bienvinda
  del usuario osea cambiamos la orimera pagina que veria el usuario despues de logearse ahora que tenemos 
- en cuenta este segundo punto podriamos aprovechar un poco de espacio
-
- ##Bueno ahora en las navegaciones estaria bueno crear un archivo en esta ruta asi de la sgt manera
+ en cuenta este segundo punto podriamos aprovechar un poco de espacio. Bueno ahora en las navegaciones 
+ estaria bueno crear un archivo en esta ruta asi de la sgt manera
 
      proyecto-0/resources/views/prueba/index.blade.php
 
@@ -186,15 +185,15 @@ Bueno tenemos esto:
     
 ## Navegacion
 
-bien para la navegacion ya tenemos una ruta views/layouts/navigation.blade.php aca podemos cambiar la barra de navegacion... si queremos colocarla
-en todas partes deberiamos de colocar en cada archivo blade.php
+ bien para la navegacion ya tenemos una ruta views/layouts/navigation.blade.php aca podemos cambiar la barra de navegacion... si queremos colocarla
+ en todas partes deberiamos de colocar en cada archivo blade.php
 
      <x-app-layout>
      ejemplo
      </x-app-layout>
 
-todo esto se instalo cuando instalamos breeze... bastente rapido verdad bueno como sea un ejemplo mas claro seria este  estamos tomando casi la 
-misma estructura del panel pero con los cosa que lo distingan... 
+ todo esto se instalo cuando instalamos breeze... bastente rapido verdad bueno como sea un ejemplo mas claro seria este  estamos tomando casi la 
+ misma estructura del panel pero con los cosa que lo distingan... 
 
      <x-app-layout>
          <x-slot name="header">
@@ -216,10 +215,63 @@ misma estructura del panel pero con los cosa que lo distingan...
          </div>
      </x-app-layout>
 
-bien podemos cambiar todas esas cosas dentro de este sitio layouts/navigation.blade.php 
-podemos modificar algunos componentes aca **views/components/responsive-nav-link.blade.php**
-todos estos se  encuentran dentro de la carpeta views... bueno en realidad todo lo de components
-sirve para eso **views/components/nav-link.blade.php** se puede cambiar muchos otros aspectos 
-relacionados al diseño **components**
+ bien podemos cambiar todas esas cosas dentro de este sitio layouts/navigation.blade.php 
+ podemos modificar algunos componentes aca **views/components/responsive-nav-link.blade.php**
+ todos estos se  encuentran dentro de la carpeta views... bueno en realidad todo lo de components
+ sirve para eso **views/components/nav-link.blade.php** se puede cambiar muchos otros aspectos 
+ relacionados al diseño **components**
 
 ## Formulario
+ 
+ bueno para hacer un formulario vamos a tener esta siguiente base  que consta de un area de texto
+ tranparente con letras de color naranja y un boton que se encargara de enviar... 
+ podemos usar el metodo post en form para mandar el formulario
+ 
+     <form method="POST">
+         @csrf
+         <textarea name="message" class=" bg-transparent text-orange-700">
+         
+         </textarea>
+        
+         <br>
+        
+         <button class=" bg-yellow-400 text-green-900 ">
+             chispas
+         </button>
+     </form>
+
+### descripcion de las etiquetas 
+ method="POST" enviará sus datos utilizando el método POST. Los datos del formulario se envían en el cuerpo de la solicitud HTTP, 
+ lo que es útil para enviar datos sensibles o modificar el estado del servidor.
+ 
+ @csrf: Es específica de algunos frameworks web, como Laravel y Django, que ofrecen protección CSRF de forma integrada.
+ 
+ En Laravel, @csrf se traduce a una directiva Blade que se convierte en un campo de input HTML oculto que contiene un token CSRF. Este token es una medida de seguridad para proteger contra ataques CSRF.
+
+ En Django, @csrf es similar y se utiliza en los templates para generar un campo de input oculto con el token CSRF.
+
+ name="message": Este es el atributo name del <textarea>, que se utiliza para identificar el campo cuando se envía el formulario al servidor. En este caso, el nombre del campo es "message".
+
+ class="bg-transparent text-orange-700": Este es el atributo class del <textarea>, que se utiliza para aplicar clases de estilo CSS al <textarea>. En este caso, se están aplicando dos clases de Tailwind CSS.
+
+ ### Rutas
+
+ para retornar proceso
+     return 'en proceso';
+
+
+ para retornar la informacion con el token csrf
+     return request();
+     
+ para retornar solo el mensaje     
+     return request('message');
+
+
+ declara una variable llamada $message.
+     $message = request('message');
+     
+    $message: Esta línea de código declara una variable llamada $message. En esta variable se almacenará el valor que el usuario ha ingresado en un campo del formulario con el nombre "message".
+
+    request('message'): Esto es una forma de acceder a los datos enviados mediante una solicitud HTTP POST o GET. En este caso, request('message') está obteniendo el valor del campo del formulario llamado "message".
+
+44:44
