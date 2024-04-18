@@ -77,8 +77,16 @@ Route::middleware('auth')->group(function () {
     Route::post('/prueba', function () {
         // return 'en proceso';
         // return request();
-        return request('message');
+        // return request('message');
+        $message = request('message');
+
     });
+
+    Route::get('/datos', function () {
+        return view('prueba.datos');
+        // return 'hola caramba';
+    })->name('prueba.datos');
+
 });
 
 require __DIR__.'/auth.php';
