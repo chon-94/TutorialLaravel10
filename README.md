@@ -301,3 +301,49 @@ Bueno tenemos esto:
  Despues de correr el comando nos saldra un mensaje con la ubicacion de los archivos generados     
 
      php artisan migrate:rollback
+
+ en fin ahora nos tendremos que dirigir **proyecto-0/database/migrations/2024_04_18_175315_create_pruebas_table.php**
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+     return new class extends Migration
+     {
+         /**
+         * Run the migrations.
+         */
+         public function up(): void
+         {
+             Schema::create('pruebas', function (Blueprint $table) {
+          $table->id();
+          $table->string('message');
+          $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+          $table->timestamps();
+             });
+         }
+
+         /**
+         * Reverse the migrations.
+         */
+         public function down(): void
+         {
+             Schema::dropIfExists('pruebas');
+         }
+     };
+
+ debemos de completas con
+
+     $table->string('message');
+     $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+
+ Ahora debemos de saber que luego de hacer este cambio tenemos que ejecutar la migracion o hacer la migracion
+
+     php artisan migrate
+
+ en mi caso he tenido mucho problemas y he terminado borrando muchas cosas de las bases de datos... 
+ nada mal para la primera version de este tutorial
+ 
