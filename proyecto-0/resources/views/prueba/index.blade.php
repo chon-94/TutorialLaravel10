@@ -15,13 +15,11 @@
                     <h2>Formularios pruebas</h2>
                     <form method="POST">
                         @csrf
-                        <textarea name="message" class=" bg-transparent text-orange-700">
-                        
-                        </textarea>
+                        <textarea placeholder="{{__("What's on your mind")}}" class="text-cyan-800" ></textarea>
                         <br>
-                        <button class=" bg-yellow-400 text-green-900 ">
+                        <x-primary-button class="mt-5">
                             chispas
-                        </button>
+                        </x-primary-button>
                     </form>
                 </div>
             </div>
