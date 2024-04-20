@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Prueba;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,29 +19,29 @@ use Illuminate\Support\Facades\Route;
 //y como esta vista devuelve la misma lista podemos hacer esto para que el codigo se 
 Route::view('/','welcome')->name('welcomies');
 
-// Route::get('/prueba', function () {
+// Route::get('/pruebas', function () {
 //     return 'Prueba detail ';
-// })->name('prueba.index');
+// })->name('pruebas.index');
 
 //La variable prb la debemos de mandar por la funcion para usarla en el retorno
 //bien como comentamos la anterior ruta la detail... tendremos un problema para mostrar vista prueba sola
 //para solucionar debemos de ponerle el signo ?  al parametro prb para volverlo opcional
-// Route::get('/prueba/{prb?}', function ($prb='si detail') {
+// Route::get('/pruebas/{prb?}', function ($prb='si detail') {
 //     return 'Prueba no detail :P  '. $prb;
 // });
 
 // con esa condicion decimos que si el espacion es en blanco que lleve al siguiente destino
-// Route::get('/prueba/{prb?}', function ($prb='si detail') {  
+// Route::get('/pruebas/{prb?}', function ($prb='si detail') {  
 //     if ($prb === ''){
-//         return redirect('/prueba'); 
+//         return redirect('/pruebas'); 
 //     }
 //     return 'Prueba no detail :P  '. $prb;
 // });
 
 //de esta manera podremos ir al index is no ponemos una variable... si cambias esto $prb=null osea el valor nul los cambios se presentaran en lavista
-// Route::get('/prueba/{prb?}', function ($prb=null) {
+// Route::get('/pruebas/{prb?}', function ($prb=null) {
 //     if ($prb === ''){
-//         return to_route('prueba.index'); 
+//         return to_route('pruebas.index'); 
 //     }
 //     return 'Prueba no detail :P  '. $prb;
 // });
@@ -62,30 +63,34 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Route::get('/prueba/{prb?}', function ($prb=null) {
+    // Route::get('/pruebas/{prb?}', function ($prb=null) {
     //     if ($prb === ''){
-    //         return to_route('prueba.index'); 
+    //         return to_route('pruebas.index'); 
     //     }
     //     return 'Prueba no detail :P  '. $prb;
     // }); 
 
-    Route::get('/prueba', function () {
-        return view('prueba.index');
+    Route::get('/pruebas', function () {
+        return view('pruebas.index');
         // return 'hola caramba';
-    })->name('prueba.index');
+    })->name('pruebas.index');
 
-    Route::post('/prueba', function () {
+    Route::post('/pruebas', function () {
         // return 'en proceso';
         // return request();
         // return request('message');
-        $message = request('message');
+        // $message = request('message');
+        // return Prueba::create([
+        Prueba::create([
 
+            'message' => request('message'),
+            'user_id' => auth()->id(),
+
+
+        ]);
+        return to_route('pruebas.index');
     });
 
-    Route::get('/datos', function () {
-        return view('prueba.datos');
-        // return 'hola caramba';
-    })->name('prueba.datos');
 
 });
 
