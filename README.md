@@ -347,3 +347,4 @@ use Illuminate\Support\Facades\Schema;
  en mi caso he tenido mucho problemas y he terminado borrando muchas cosas de las bases de datos... 
  nada mal para la primera version de este tutorial
  
+## 59:05
