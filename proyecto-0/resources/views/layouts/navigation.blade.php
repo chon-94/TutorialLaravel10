@@ -18,13 +18,10 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('prueba.index')" :active="request()->routeIs('prueba.index')">
+                    <x-nav-link :href="route('pruebas.index')" :active="request()->routeIs('pruebas.index')">
                         {{ __('index') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('prueba.datos')" :active="request()->routeIs('prueba.datos')">
-                        {{ __('datos') }}
-                    </x-nav-link>
 
                 </div>
                 <!-- Navigation Links -->
@@ -92,13 +89,10 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('prueba.index')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('pruebas.index')" :active="request()->routeIs('dashboard')">
                 {{ __('index') }}
             </x-responsive-nav-link>
-
-            <x-responsive-nav-link :href="route('prueba.datos')" :active="request()->routeIs('dashboard')">
-                {{ __('datos') }}
-            </x-responsive-nav-link>
+ 
         </div>
 
         <!-- Responsive Settings Options -->
