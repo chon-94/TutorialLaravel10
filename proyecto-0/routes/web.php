@@ -88,7 +88,7 @@ Route::middleware('auth')->group(function () {
 
 
         ]);
-        return to_route('pruebas.index');
+        return to_route('dashboard');
     });
 
 
